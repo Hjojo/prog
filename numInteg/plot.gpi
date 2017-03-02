@@ -1,0 +1,6 @@
+set term pdf
+set out "plot.pdf"
+set xlabel "alpha"
+set ylabel "E"
+set title "Variational Method"
+plot "outHam.txt" using "alpha":"E" with lines title "calculated"

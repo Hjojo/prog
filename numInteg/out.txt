@@ -1,0 +1,2 @@
+Value of int_a^b dx (ln(x)/sqrt(x)): -4
+Real value: -4

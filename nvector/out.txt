@@ -1,0 +1,9 @@
+
+main: testing nvector_alloc ...
+test succeeded
+
+main: testing nvector_set ang get ...
+test succeeded
+
+main: testing nvector_dot_product ...
+test succeeded

@@ -1,0 +1,13 @@
+CFLAGS := -Wall -std=gnu99
+LDLIBS := -lm
+.PHONEY: all clean
+
+all : out.txt
+	cat $<
+
+out.txt : main-stdio
+	./$< > $@
+
+clean:
+	$(RM) main-stdio main-stdio.o out.txt \
+		main-cmdline main-cmdline.o

@@ -1,0 +1,8 @@
+set terminal pdf
+set output "plot.pdf"
+set xlabel "x"
+set ylabel "y"
+set tics out
+set key out
+plot \
+	"outcmdline.txt" with lines title "sin"

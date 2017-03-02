@@ -1,0 +1,8 @@
+set term pdf
+set out "plotY.pdf"
+set title "y(t)"
+set xlabel "t"
+set ylabel "y"
+plot \
+ "outY.txt" using "t":"y(t)" with lines title "calculated" \
+,"outY.txt" using "t":"exact" with points title "exact" \
