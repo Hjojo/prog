@@ -1,4 +1,0 @@
-sqrt(-2): Real part: 0, Imag part: 1.41421
-e^i: Real part: 0.540302, Imag part: 0.841471
-e^iPi: Real part: -1, Imag part: 1.22465e-16
-i^e: Real part: -0.42822, Imag part: -0.903675
