@@ -1,0 +1,59 @@
+	 While loop
+Calculated Int max: 2147483647
+Real Int max: 2147483647
+
+	 For loop
+Calculated Int max: 2147483647
+Real Int max: 2147483647
+
+	 Do while loop
+Calculated Int max: 2147483647
+Real Int max: 2147483647
+
+	 While loop
+Calculated Int min: -2147483648
+Real Int min: -2147483648
+
+	 For loop
+Calculated Int min: -2147483648
+Real Int min: -2147483648
+
+	 Do while loop
+Calculated Int min: -2147483648
+Real Int min: -2147483648
+
+Machine Epsilon
+Only one of each loop type have been done for one of each types
+
+	While loop
+Calculated double eps: 2.22045e-16
+Real double eps: 2.22045e-16
+
+	For loop
+Calculated float eps: 1.19209e-07
+Real float eps: 1.19209e-07
+
+	do while loop
+Calculated long double eps: 1.0842e-19
+Real long double eps: 1.0842e-19
+
+Float sum up: 15.4037
+
+Float sum down: 18.8079
+
+Explain the difference.
+In sum_up_float we start with a 'big' number. Therefore the last small digits in the last contribution will be ignored.
+In sum_down_float we start with the small numbers and let the snowball up to 'big' numbers.
+
+Does this sum converge as function of max?
+Since it is a harmonic series it diverge
+
+Double sum up: 21.3716
+
+Double sum down: 21.3716
+
+Explain the result of sum doubles.
+The last digit of the smallest number is still within the range of the double.
+
+a=2.4, b=2.6, tau=0.25 and epsilon=50: equals = 1
+
