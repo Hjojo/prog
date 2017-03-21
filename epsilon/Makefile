@@ -18,4 +18,4 @@ sum_way.o: sum_way.h
 equal.o: equal.h
 
 clean:
-	$(RM) main *.o
+	$(RM) main *.o *.txt
