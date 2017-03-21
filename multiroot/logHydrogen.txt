@@ -1,0 +1,14 @@
+rmax = 8
+iter = 0 e = -1 f(e) = 1.1e+03
+iter = 1 e = -0.859 f(e) = 376
+iter = 2 e = -0.786 f(e) = 199
+iter = 3 e = -0.705 f(e) = 87.4
+iter = 4 e = -0.641 f(e) = 40.1
+iter = 5 e = -0.586 f(e) = 17.2
+iter = 6 e = -0.546 f(e) = 6.84
+iter = 7 e = -0.519 f(e) = 2.3
+iter = 8 e = -0.505 f(e) = 0.552
+iter = 9 e = -0.501 f(e) = 0.0673
+iter = 10 e = -0.5 f(e) = 0.00241
+iter = 11 e = -0.5 f(e) = 1.11e-05
+status = success

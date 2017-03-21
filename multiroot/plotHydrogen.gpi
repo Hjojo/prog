@@ -1,0 +1,7 @@
+set term pdf
+set out "plotHydrogen.pdf"
+set title "s-wave for Hydrogen shooting method for F_e(r_{max})=0"
+set xlabel "r [a_{Bohr}]"
+set ylabel "F_e(r)"
+plot "outHydrogen.txt" using 1:2 with points title "numeric" \
+	,"outHydrogen.txt" using 1:3 with lines title "exact"

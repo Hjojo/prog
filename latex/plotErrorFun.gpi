@@ -1,0 +1,7 @@
+set term pdf
+set out "plotErrorFun.pdf"
+set title "Error function"
+set xlabel "x"
+set ylabel "Error function"
+set grid
+plot "output.txt" using "x":"u" with lines
