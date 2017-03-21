@@ -1,0 +1,9 @@
+set term pdf
+set out "plot.pdf"
+set title "title"
+set xlabel "x"
+set ylabel "u"
+plot \
+ "outBox.txt" index 0 using "x":"u" with lines title "k = 0" \
+,"outBox.txt" index 1 using "x":"u" with lines title "k = 1" \
+,"outBox.txt" index 2 using "x":"u" with lines title "k = 2"

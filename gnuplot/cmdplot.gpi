@@ -1,7 +1,7 @@
 set terminal pdf
-set output "plot.pdf"
+set output "cmdplot.pdf"
 set xlabel "x"
-set ylabel "y"
+set ylabel "sin(x)"
 set tics out
 set key out
 plot \

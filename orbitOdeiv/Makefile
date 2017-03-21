@@ -1,6 +1,6 @@
 CFLAGS := -Wall -std=gnu99 `gsl-config --cflags`
 LDLIBS := `gsl-config --libs`
-.PHONEY = all clean
+.PHONEY: all clean
 
 all: plotY.pdf plotOrbit.pdf
 
@@ -17,6 +17,4 @@ outOrbit.txt: orbit
 	./$< > $@
 
 clean:
-	$(RM) outY.txt yDiffEq.o yDiffEq \
-		outOrbit.txt orbit.o orbit \
-		plotY.pdf plotOrbit.pdf
+	$(RM) *.txt *.o yDiffEq orbit *.pdf

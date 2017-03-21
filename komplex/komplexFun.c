@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include "komplexFun.h"
 
+
+void komplex_print(char* s, komplex z) {
+	printf("%s (%g,%g)\n",s,z.re,z.im);
+}
+
 void komplex_set(komplex* z, double x, double y) {
 	(*z).re = x;
 	(*z).im = y;
@@ -22,6 +27,6 @@ komplex komplex_sub(komplex a, komplex b) {
 }
 
 komplex komplex_conjugate(komplex z) {
-	komplex result = {z.re,-z.re};
+	komplex result = {z.re,-z.im};
 	return result;
 }

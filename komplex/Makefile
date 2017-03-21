@@ -8,9 +8,9 @@ default: out.txt
 out.txt: main
 	./$< > $@
 
-main: main.o komplexFun.o 
+main: main.o komplexFun.o
 
 komplexFun.o main.o : komplexFun.h
 
 clean:
-	rm -f main main.o komplex.o
+	rm -f main *.o *.txt

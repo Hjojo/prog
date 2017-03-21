@@ -15,10 +15,11 @@ int main() {
 		printf("test succeeded\n");
 	}
 
-	printf("\nmain: testing nvector_set ang get ...\n");
-	nvector_set(v,2,42);
+	printf("\nmain: testing nvector_set and get ...\n");
+	int testValue = 42;
+	nvector_set(v,2,testValue);
 	double v_2nd_element = nvector_get(v,2);
-	if( v_2nd_element == 42) {
+	if( v_2nd_element == testValue) {
 		printf("test succeeded\n");
 	} else {
 		printf("test failed\n");

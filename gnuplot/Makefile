@@ -2,30 +2,32 @@ CFLAGS := -Wall -std=gnu99
 LDLIBS := -lm
 .PHONEY: all stdio cmdline clean
 
-all : cmdlineplot.pdf
+all: cmdplot.pdf stdioplot.pdf
 
-stdio : outstdio.txt
+stdio: outstdio.txt
 	cat $<
 
-outstdio.txt : main-stdio in.dat
+stdioplot.pdf: stdioplot.gpi outstdio.txt
+	gnuplot $<
+
+outstdio.txt: main-stdio in.txt
 	./$< < $(word 2,$^) > $@
 
 
-cmdline : outcmdline.txt
+
+cmdline: outcmdline.txt
 	cat $<
 
-cmdlineplot.pdf : cmdplot.gpi outcmdline.txt
-	gnuplot cmdplot.gpi
+cmdplot.pdf: cmdplot.gpi outcmdline.txt
+	gnuplot $<
 
-outcmdline.txt : main-cmdline in.dat
+outcmdline.txt: main-cmdline in.txt
 	./$< `cat $(word 2,$^)` > $@
 
-in.dat : Makefile
+in.txt: Makefile
 	cat /dev/null > $@
 	for x in `seq 0 0.1 10`; do echo $$x >> $@; done
 
 
 clean:
-	$(RM) main-stdio main-stdio.o outstdio.txt \
-		main-cmdline main-cmdline.o outcmdline.txt \
-		cmdlineplot.pdf
+	$(RM) main-stdio main-cmdline *.o *.txt *.pdf

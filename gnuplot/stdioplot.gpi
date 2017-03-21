@@ -1,0 +1,8 @@
+set terminal pdf
+set output "stdioplot.pdf"
+set xlabel "x"
+set ylabel "cos(x)"
+set tics out
+set key out
+plot \
+	"outstdio.txt" with lines title "cos"
