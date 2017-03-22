@@ -1,0 +1,2 @@
+Self made arctan(6.1242e+06) = 1.5708
+math.h arctan(6.1242e+06) = 1.5708
