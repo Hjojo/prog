@@ -2,11 +2,14 @@
 #include <math.h>
 
 double numArctan(double x);
+int equal(double a, double b, double tau, double epsilon);
 
 int main() {
-	double x = 6124201;
-	printf("Self made arctan(%g) = %g\n",x,numArctan(x));
-	printf("math.h arctan(%g) = %g\n",x,atan(x));
+	printf("x \t self made \t math.h\n");
+	for(double x = -1000; x < 1000; x++) {
+		if(equal(numArctan(x),atan(x),1e-6,1e-6) == 0) fprintf(stderr,"numArctan and atan are not equal for %g\n",x);
+		printf("%g \t %g \t %g\n",x,numArctan(x),atan(x));
+	}
 
 	return 0;
 }

@@ -1,0 +1,11 @@
+gsl: fsolver.c:126: ERROR: endpoints do not enclose a minimum
+Default GSL error handler invoked.
+Aborted (core dumped)
+iter 	 x
+1 	 0.1
+2 	 0.231308
+3 	 0.25
+4 	 0.25
+5 	 0.25
+Converged:
+6 	 0.25
