@@ -40,7 +40,7 @@ The reason for haveing gsl/... is because the gsl library files are installed in
 This exercise require to calculate arctan as $\arctan(x) = \int_0^x \frac{1}{x^2+1} \mathrm{d}x$.
 
 My arctan is calculated as seen in the file \texttt{numArctan.c}. Here the integrand is defined in the function \emph{arctanInteg} and is used
-in the \emph{gsl\_function} to be used in \emph{gsl\_integration\_qag} routine. To simplify the calculation I have reduced the argument in the following ways:
+in the \emph{gsl\_function} to be used in the \emph{gsl\_integration\_qag} routine. To simplify the calculation I reduced the argument in the following ways:
 
 \begin{enumerate}
 	\item if $x=0$ return $\operatorname{arctan}(x)=0$
