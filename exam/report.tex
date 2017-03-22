@@ -7,7 +7,7 @@
 
 \begin{document}
 
-\title{Practical Programming Exam - Exercise 20 and question 11.3}
+\title{Practical Programming Exam\\ Exercise 20 and question 10.3}
 \author{Jonas Hjorth Knudsen\\ 201406333}
 \date{\today}
 
@@ -15,7 +15,8 @@
 
 
 
-\section{Question 3 from lecture 11}
+\section{Question 3 from lecture 10*}
+*NOTICE: question taken from lecture 10 since lecture 11 does not contain a question 3.\\
 
 \textit{Suppose you run the command \emph{make main} and it fails with diagnostics}
 
@@ -27,26 +28,35 @@ compilation terminated.
 
 \textit{Explain the error and how to correct it.}\\
 
-The error occur because the header in main.c is wrong. The headerfile is \#include\textless gsl\_sf.h\textgreater
+The error occur because the header in main.c is wrong. The headerfile is \mbox{\#include\textless gsl\_sf.h\textgreater}
  when it should be \#include\textless gsl/gsl\_sf.h\textgreater.
 The reason for haveing gsl/... is because the gsl library files are installed in their own directory called gsl.
 
 
 
-\section{Exercise 20}
 
+\section{Exercise 20 - Numeric Arctan}
 
+This exercise require to calculate arctan as $\arctan(x) = \int_0^x \frac{1}{x^2+1} \mathrm{d}x$.
 
+My arctan is calculated as seen in the file \texttt{numArctan.c}. Here the integrand is defined in the function \emph{arctanInteg} and is used
+in the \emph{gsl\_function} to be used in \emph{gsl\_integration\_qag} routine. To simplify the calculation I have reduced the argument in the following ways:
 
+\begin{enumerate}
+	\item if $x=0$ return $\operatorname{arctan}(x)=0$
+	\item if $x<0$ return $-\operatorname{arctan}(-x)$
+	\item if $x>1$ return $\frac{\pi}{2} - \operatorname{arctan}(\frac{1}{x})$
+\end{enumerate}
 
+In \texttt{main.c} a message is written to the error stream (stderr) if the result from my arctan is different from math.h's atan according to the equal method made in lecture 2 with $\mathrm{tau} = 10^{-6}$ and $\mathrm{epsilon} = 10^{-6}$. This never occur and in \texttt{outArctan.txt} the difference (error) can be seen to be maximum around $10^{-16}$. 
 
-\section{Exercise 32}
+My solution together with math.h's atan function is plotted as seen in Figure~\ref{fig:arctan}. It can be seen that the lines lie on top of each other with follows from the low errors from the output file.
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
-	\includegraphics{plotMin.pdf}
-	\caption{Minimum of the function $f(x) = \frac{1}{2} (x^2-\frac{1}{2}x)$}
-	\label{fig:min}
+	\includegraphics{plotArctan.pdf}
+	\caption{Self made arctan function plotted with math.h atan function. It can be seen that the two lines lie on top of each other.}
+	\label{fig:arctan}
 \end{figure}
 
 
