@@ -1,0 +1,8 @@
+set term pdf
+set out "plotLeastSquare.pdf"
+set title "Least square fit to some data points"
+set xlabel "t"
+set ylabel "y"
+plot\
+ "outLeastSquare.txt" index 0 with errorbars title "raw data" \
+,"outLeastSquare.txt" index 1 with lines title "least square fit"
