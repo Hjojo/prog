@@ -1,0 +1,8 @@
+set term pdf
+set out "plotArctan.pdf"
+set title "Arctan as a function of x"
+set xlabel "x"
+set ylabel "arctan(x)"
+plot\
+ "outArctan.txt" using 1:2 with lines title "self made"\
+,"outArctan.txt" using 1:3 with lines title "math.h" 
